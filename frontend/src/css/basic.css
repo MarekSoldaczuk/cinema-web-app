@@ -14,9 +14,21 @@ body {
     color: white !important;
 }
 
-.navbar ul {
+
+.navbar {
+  background-color: #000000;
+}
+
+.navbar-nav {
     font-size: 25px;
     text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 1px;
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+  padding-right:30px;
 }
 
 nav img {
@@ -25,20 +37,13 @@ nav img {
     height: auto;
 }
 
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #df3cd6;
+.carousel-inner img {
+  width: 60%;
+  margin-left: 20%;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #df3cd6;
-  outline: none;
+h3 {
+  text-shadow: 2px 2px #333333;
 }
 
 hr {
@@ -46,61 +51,7 @@ hr {
   margin-bottom: 25px;
 }
 
-.registerbtn, .loginbtn {
-  background-color: #4FB29D;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
 
-.registerbtn:hover, .loginbtn:hover {
-  opacity:1;
-}
-
-a {
-  color: dodgerblue;
-}
-
-.signin, .signup {
-  background-color: #df3cd6;
-  text-align: center;
-}
-
-.forms {
-    display: flex;
-    justify-content: center;
-}
-
-div > img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  color: white;
-} 
-
-.imgcontainer {
-  width: 10vw;
-  height: 10vw;
-  background-image: url("../../public/avatar.png");
-  background-size: cover;
-  background-position: center;
-  display: block;
-  margin: 0 auto;
-}
-
-.forms {
-  margin-bottom: 100px;
-}
 
 @media screen and (max-width: 600px) {
   body {
