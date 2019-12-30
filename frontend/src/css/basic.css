@@ -47,21 +47,48 @@ h3 {
 }
 
 hr {
-  border: 1px solid #df3cd6;
-  margin-bottom: 25px;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-top: 1px solid white;
+ }
+
+.description {
+  text-shadow: 2px 2px #831818;
+  font-family: 'Kulim Park', sans-serif;
+  margin: 5% 20%;
+  font-size: 1.3rem;
 }
 
+.about {
+  text-align: justify;
+  text-shadow: 1px 1px #831818;
+  font-family: 'Kulim Park', sans-serif;
+  margin:5% 10%;
+}
 
+.desc {
+float: right; 
+ width: 50%;
+  height: auto;
+  margin-left: 20%;
+  margin-right: 5%;
+}
 
 @media screen and (max-width: 600px) {
-  body {
+  /* body {
     background-size: contain;
     background-repeat: no-repeat;
-  }
+  } */
 
   .navbar {
       font-size: 0.5rem;
-      height: 3%;
+      height: 4%;
+  }
+
+  .desc {
+    width: 85%; 
+    margin: 5%;
   }
 
   .imgcontainer {
