@@ -46,7 +46,7 @@ function validateMovie(movie) {
         title: Joi.string().min(5).max(63).required(),
         director: Joi.string().min(4).max(63).required(),
         genre: Joi.string().valid(['DRAMAT', 'KOMEDIA', 'MUSICAL', 'HORROR', 'ANIMOWANY', 'FAMILIJNY', 'SENSACYJNY', 'PRZYGODOWY']).required(),
-        runningTime: Joi.number().min(5),
+        runningTime: Joi.number().min(5).required(),
         description: Joi.string().max(1023),
         // img: Joi.string().required()
     };

@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const _ = require('lodash');
-const auth = require('../middleware/auth.js')
+//const auth = require('../middleware/auth.js')
 const {User,validate} = require('../models/user.js');
 const mongoose = require('mongoose');
 const express = require('express');
@@ -24,9 +24,9 @@ router.post('/', async (req, res) => {
 });
 
 //get current user
-router.get('/me', auth, async (req,res) => {
-    const user = await User.findById(req.user._id);
-    res.send(_.pick(user, ['_id','email']));
-});
+// router.get('/me', auth, async (req,res) => {
+//     const user = await User.findById(req.user._id);
+//     res.send(_.pick(user, ['_id','email']));
+// });
 
 module.exports = router;
