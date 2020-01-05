@@ -1,7 +1,10 @@
-ul {
+nav.ui.menu ul {
     display: flex;
-    /* flex-direction: row; */
-    /* flex-wrap: nowrap; */
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+}
+
+nav.ui.menu li.item {
+    text-transform: uppercase;
 }

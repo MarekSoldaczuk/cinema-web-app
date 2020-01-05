@@ -1,0 +1,14 @@
+.about {
+    text-align: justify;
+    text-shadow: 1px 1px #831818;
+    font-family: 'Kulim Park', sans-serif;
+    margin:5% 15%;
+  }
+
+.desc {
+    float: right; 
+     width: 50%;
+      height: auto;
+      margin-left: 15%;
+      margin-right: 5%;
+}
