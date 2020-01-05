@@ -15,9 +15,7 @@
 
 import React from "react";
 import ReactDOM from 'react-dom';
-// import './../css/components.css';
-import './App.css'
-;
+import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -29,17 +27,13 @@ import Register from './Register';
 import About from './About';
 import Repertoire from './Repertoire';
 
-//export default function App() {
 class App extends React.Component {
     render() {
         return (
             <Router>
                 <div>
-                    <nav className="ui menu">
+                    <nav className="ui menu themenu">
                         <ul>
-                            <li className="item">
-                                <Link to="/">Home</Link>
-                            </li>
                             <li className="item">
                                 <Link to="/repertoire">Repertuar</Link>
                             </li>
@@ -71,18 +65,11 @@ class App extends React.Component {
                         <Route path="/about">
                             <About />
                         </Route>
-                        <Route path="/">
-                            <Home />
-                        </Route>
                     </Switch>
                 </div>
             </Router>
         );
     }
-}
-
-function Home() {
-  return <h2>Home</h2>;
 }
 
 export default App;
