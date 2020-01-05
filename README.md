@@ -1,1 +1,1 @@
-# cinema-web-app
+# Cinema Web App

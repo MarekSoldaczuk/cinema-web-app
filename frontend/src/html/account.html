@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kino - Moje konto</title>
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar sticky-top navbar-dark navbar-expand-sm justify-content-center">
+        <div class="logo">
+            <a class="navbar-brand" href="index.html"><img src="../../public/logo_burned.png"></a>
+        </div>
+        <a class="navbar-brand" href="index.html">Kino "Kino"</a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Repertuar</a></li>
+            <li class="nav-item"><a class="nav-link" href="films.html">Filmy</a></li>
+            <li class="nav-item active"><a class="nav-link" href="account.html">Moje konto</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">O nas</a></li>
+        </ul>
+    </nav>
+
+    <div class="forms">
+        <div class="registration">
+            <form action="action_page.php" id="registerForm">
+                <div class="container">
+                    <h1>Załóż konto!</h1>
+                    <hr>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Adres email" name="email" id="reg_email" required>
+
+                    <label for="psw"><b>Hasło</b></label>
+                    <input type="password" placeholder="Hasło" name="psw" id="reg_psw" required>
+
+                    <label for="psw-repeat"><b>Powtórz hasło</b></label>
+                    <input type="password" placeholder="Powtórz hasło" name="psw-repeat" id="reg_psw_repeat" required>
+                    <hr>
+                    <button type="submit" class="registerbtn">Rejestracja</button>
+                </div>
+
+                <p>Posiadasz konto w naszym serwisie? <a id="hrefLogin" href="#">Zaloguj się</a>.</p>
+
+            </form>
+        </div>
+        <div class="login" style="display: none">
+            <form class="form" action="main.html" id="loginForm">
+                <div class="container">
+                    <h1>Zaloguj się!</h1>
+                    <hr>
+                    <div class="imgcontainer">
+                    </div>
+                    <label for="uname"><b>Email</b></label>
+                    <input type="text" placeholder="Adres email" name="uname" id="log_email" required>
+
+                    <label for="psw"><b>Hasło</b></label>
+                    <input type="password" placeholder="Hasło" name="psw" id="log_psw" required>
+
+                    <button type="submit" class="loginbtn btn btn-outline-primary">Zaloguj</button>
+                </div>
+
+                <p>Chcesz założyć konto w naszym serwisie? <a id="hrefRegister" href="#">Zarejestruj się</a>.</p>
+
+            </form>
+        </div>
+    </div>
+
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-center">
+        <p>Autorzy: Kozera Teresa, Matejuk Kamil, Sołdaczuk Marek</p>
+    </nav>
+
+</body>
+
+</html>
