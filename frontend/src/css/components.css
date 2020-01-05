@@ -1,0 +1,32 @@
+/* h1, h4 {
+    display: inline;
+  } */
+
+.item {
+    font-family: 'Kulim Park', sans-serif;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.director {
+    display: block;
+    /* float: right; */
+    width: 50%;
+}
+
+.title {
+    float: left;
+    display: block;
+    width: 50%;
+}
+
+.genre {
+    float: left;
+    color: #525252;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid red;
+    margin-bottom: 25px;
+}
