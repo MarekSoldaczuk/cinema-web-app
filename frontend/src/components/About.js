@@ -15,8 +15,7 @@ const About = () => {
             Error nam officiis dolores ipsam aliquam placeat temporibus voluptas quidem, recusandae asperiores ipsa.
             Lorem
             ipsum dolor sit amet consectetur adipisicing elit. Nisi ducimus magni impedit, veniam facere repellendus
-            aspernatur deserunt. Ex voluptate id repellat tenetur eveniet, cum suscipit sapiente earum omnis quaerat
-            optio!
+            aspernatur deserunt.
             </p>
         </div>
     );
