@@ -32,5 +32,5 @@ mongoose.connect("mongodb://localhost/kino")
     .then(() => console.log('connected'))
     .catch(err => console.error('could not connect', err));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3020;
 app.listen(port, () => console.log(`listening on port ${port}...`));

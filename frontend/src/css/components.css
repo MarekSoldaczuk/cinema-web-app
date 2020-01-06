@@ -1,32 +1,110 @@
-/* h1, h4 {
-    display: inline;
-  } */
+.list {
+    /* margin-top: 5%; */
+    margin-bottom: 5%;
+}
 
 .item {
     font-family: 'Kulim Park', sans-serif;
     width: 50%;
     margin-left: 25%;
+    margin-top: 2%;
 }
 
 .director {
+    font-size: 100%;
     display: block;
-    /* float: right; */
+    float: right;
     width: 50%;
+    height: 50px;
+    padding: 2% 0 0 2%;
+    font-size: 1.1vw;
+
 }
 
-.title {
+.title2 {
+    text-shadow: 2px 2px #cc1580;
+    margin: auto;
+    text-align: center;
+    font-size: 200%;
     float: left;
-    display: block;
+    display: flex;
+    justify-content: center;
     width: 50%;
+    height: 90px;
 }
 
 .genre {
     float: left;
-    color: #525252;
+    color: #686868;
+    width: 50%;
+    height: 40px;
+    font-size: 1.1vw;
+    padding-left: 2%;
+
+
 }
+
+hr {
+    width: 100%;
+    border: 1px solid red;
+    /* margin-bottom: 25px; */
+}
+
+
+.title {
+    text-shadow: 2px 2px #cc1580;
+    margin: auto;
+    text-align: center;
+    font-size: 200%;
+    float: left;
+    justify-content: center;
+    width: 50%;
+    height: 90px;
+    position: relative;
+    /* border: 3px solid green; */
+    font-size: 2.4vw;
+  }
+
+  
+  @media screen and (max-width: 900px) {  
+    .director, .genre {
+        font-size: 2.1vw;
+    }
+    
+     
+  .title p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  }
+
+  @media screen and (max-width: 750px) {
+
+    .director, .genre {
+        font-size: 2.5vw;
+    }
+
+  }
+
+@media screen and (max-width: 600px) {
+
+    .title {
+        font-size: 3.5vw;  
+    }
+    
+    .movie {
+        font-size: 0.8rem;
+    }
+
+  }
 
 hr {
     width: 100%;
     border: 1px solid red;
     margin-bottom: 25px;
 }
+

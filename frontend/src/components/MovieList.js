@@ -1,27 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
+import MovieItems from './MovieItems';
 import './../css/components.css';
 
 class MovieList extends React.Component {
     
+    constructor(props) {
+        super(props);
+        this.state = {
+            movies: []
+        };
+        this.moviesAPI();
+      }
+
+    moviesAPI = async () => {
+        const response = await axios.get('http://localhost:3020/api/movies/');
+        //console.log(response.data);
+        this.setState({
+            movies: response.data
+        });  
+    }
+
     render() {
         return ( 
-        <div className="item">
-         
-        <h1 className="title">Tytułsa ssdadasf saf f asdas fdsafas fs dfsdfasdf  </h1>
-        <h3 className="director">Reżyseria: Imię Nazwisko</h3>
-      
-        <div className="genre">
-        GATUNEK | GATUNEK | 100 minut </div><br /><hr />
-        <p className="movie">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque, fugit mollitia. Natus maxime quisquam et
-        repellat velit debitis sequi hic, omnis voluptatum, dolore vitae corrupti! In id ea sequi eligendi!
-        </p>
-        </div>
+            <div className = "list" >
+            <MovieItems movies = {this.state.movies} />
+            </div>
         );
     }
 }
-
-//ReactDOM.render(<MovieList />, document.getElementById('movieList'));
 
  export default MovieList;
