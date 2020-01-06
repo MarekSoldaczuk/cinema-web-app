@@ -10,7 +10,7 @@ import {
 import './App.css';
 // components
 import MovieList from './MovieList';
-import Register from './Register';
+import LoginRegisterView from './LoginRegisterView';
 import About from './About';
 import Repertoire from './Repertoire';
 import Home from './Home';
@@ -76,7 +76,7 @@ class App extends React.Component {
                             <MovieList />
                         </Route>
                         <Route path="/myaccount">
-                            <Register />
+                            <LoginRegisterView />
                         </Route>
                         <Route path="/about">
                             <About />
