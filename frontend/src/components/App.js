@@ -26,7 +26,7 @@ import Profile from "./Profile";
 class App extends React.Component {
     constructor() {
         super();
-        this.state = {slide1: slide1, text1: 'Kraina lodu', slide2: slide2, text2: 'Joker', slide3: slide3, text3: 'Gwiezdne Wojny'};
+        this.state = {slide1: slide1, text1: 'Kraina Lodu 2', slide2: slide2, text2: 'Joker', slide3: slide3, text3: 'Gwiezdne Wojny: Skywalker. Odrodzenie'};
     }
     
     render() {
