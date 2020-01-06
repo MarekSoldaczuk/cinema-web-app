@@ -3,25 +3,24 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const users = require('./routes/users.js');
 const movies = require('./routes/movies.js');
-//const auth = require('./routes/auth.js');
+const auth = require('./routes/auth.js');
 
 const express = require('express');
 const app = express();
 
 // najpierw trzeba ustawic zmienna globalna
-// set todolist_jwtPrivateKey=mySecureKey
-// linux: export todolist_jwtPrivateKey=mySecureKey
-// if(!config.get('jwtPrivateKey')){
-//     console.log('FATAL ERROR: jwtPrivateKey is not defined');
-//     process.exit(1);
-// }
+// set cinema_jwtPrivateKey=mySecureKey
+// linux: export cinema_jwtPrivateKey=mySecureKey
+if(!config.get('jwtPrivateKey')){
+    console.log('FATAL ERROR: jwtPrivateKey is not defined');
+    process.exit(1);
+}
 
 app.use(express.json());
 app.use(cors());
 app.use('/api/users', users);
 app.use('/api/movies', movies);
-//app.use('/api/lists', tokenAuth , lists);
-//app.use('/api/auth', auth);
+app.use('/api/auth', auth);
 
 // const db = config.get('db');
 // mongoose.connect(db)
@@ -32,5 +31,6 @@ mongoose.connect("mongodb://localhost/kino")
     .then(() => console.log('connected'))
     .catch(err => console.error('could not connect', err));
 
-const port = process.env.PORT || 3000;
+// changed from 3000 to 3020 as port 3000 was used by React App.js
+const port = process.env.PORT || 3020;
 app.listen(port, () => console.log(`listening on port ${port}...`));

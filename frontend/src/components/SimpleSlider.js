@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 class SimpleSlider extends React.Component {
     render() {
-      console.log(this.props.img1);
       var settings = {
         dots: true,
         infinite: true,

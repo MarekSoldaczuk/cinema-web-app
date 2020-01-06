@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from 'react-dom';
+import {Redirect} from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   BrowserRouter as Router,
@@ -19,6 +19,7 @@ import cinemaImg from '../img/logo_burned.png';
 import slide1 from '../img/slide1.jpg'
 import slide2 from '../img/slide2.jpg';
 import slide3 from '../img/slide3.jpg';
+import Profile from "./Profile";
 
 
 
@@ -75,11 +76,17 @@ class App extends React.Component {
                         <Route path="/movies">
                             <MovieList />
                         </Route>
-                        <Route path="/myaccount">
-                            <LoginRegisterView />
-                        </Route>
+                        {/* UWAGA! Na chwile obecna nie ma przycisku logout, 
+                        zeby zasymulowac te akcje trzeba usunac token z zakladki 
+                        'Application' w DevToolsach. W przeciwnym przypadku
+                        przy klikaniu na zakladke 'MOJE KONTO' wyswietla sie
+                        roboczy PROFil */}
+                        <PrivateRoute path="/myaccount" component={Profile}/>
                         <Route path="/about">
                             <About />
+                        </Route>
+                        <Route path="/login">
+                            <LoginRegisterView />
                         </Route>
                     </Switch>
             </Router>
@@ -87,21 +94,12 @@ class App extends React.Component {
     }
 }
 
-// function Home() {
-//     return (
-//         <div className="page-container"> 
-//             <SimpleSlider />
-//             <p className="description text-center">
-//                 Witaj na stronie kina "Kino", najlepszego kina w tej części Europy. <br />
-//                 Zachęcamy do zapoznania się z naszą ofertą, w której z pewnością znajdziesz coś dla siebie!
-//                 <br />
-//                 Wszystkie użyteczne informacje znajdują się na stronie, którą przeglądać możesz przy pomocy górnego paska
-//                 nawigacji.<br />
-//                 Do zobaczenia w Kinie!
-//             </p>
-//         </div>
-        
-//     );
-//   }
+const isLoggedIn = ()=> {
+    return localStorage.getItem('token');
+}
+
+const PrivateRoute = ({ component: Component, ...rest}) =>( <Route {...rest} render={(props)=> (
+    isLoggedIn() ? <Component {...props}/>: <Redirect to='login'/> )}/>
+)
 
 export default App;
