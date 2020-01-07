@@ -23,7 +23,7 @@ app.use(cors());
 app.use('/api/users', users);
 app.use('/api/movies', movies);
 app.use('/api/auth', auth);
-// app.use('/api/bookings', bookings);
+app.use('/api/bookings', bookings);
 app.use('/api/shows', shows);
 
 // const db = config.get('db');

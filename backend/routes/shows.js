@@ -31,7 +31,28 @@ router.post('/', async (req, res) => {
     show.date = req.body.date; 
     // console.log(req.body);
     show.room = req.body.room;
-    show.seats = req.body.seats;
+
+    const seats = [];
+
+    let colNumbers = 10;
+    let rowNumbers = 10;
+
+    for(let c = 0; c < colNumbers; c++)
+    {
+        for(let r = 0; r < rowNumbers; r++)
+        {
+
+            let newSeat = {
+                row: r+1,
+                column: c+1,
+                taken: false
+            }
+            // console.log(`newSeat!: ${newSeat}`);
+            seats.push(newSeat)
+        }
+    }
+    show.seats = seats;
+
     show = await show.save();
   
     res.send(show);
