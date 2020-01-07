@@ -92,5 +92,24 @@ router.get('/:id', async (req, res) => {
     res.send(booking);
 });
 
+// PUT to be implemented in the future
+// router.put('/:id', async (req, res) => {
+//     const {
+//         error
+//     } = validate(req.body);
+//     if (error) return res.status(400).send(error.details[0].message);
+
+//  ........
+//  res.send(booking);
+// });
+
+router.delete('/:id', async (req, res) => {
+    const booking = await Booking.findByIdAndRemove(req.params.id);
+
+    if (!booking) return res.status(404).send('The booking with the given ID was not found.');
+
+    res.send(booking);
+});
+
 module.exports = router;
 
