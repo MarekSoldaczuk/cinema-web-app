@@ -4,6 +4,8 @@ const cors = require('cors')
 const users = require('./routes/users.js');
 const movies = require('./routes/movies.js');
 const auth = require('./routes/auth.js');
+const bookings = require('./routes/bookings.js');
+const shows = require('./routes/shows.js');
 
 const express = require('express');
 const app = express();
@@ -21,6 +23,8 @@ app.use(cors());
 app.use('/api/users', users);
 app.use('/api/movies', movies);
 app.use('/api/auth', auth);
+// app.use('/api/bookings', bookings);
+app.use('/api/shows', shows);
 
 // const db = config.get('db');
 // mongoose.connect(db)

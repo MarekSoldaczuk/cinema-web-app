@@ -2,13 +2,12 @@ const {
     Movie,
     validate
 } = require('../models/movie.js');
-const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
 
 router.get('/', async (req, res) => {
-     const movies = await Movie.find().sort('name');
+     const movies = await Movie.find().sort('title');
     res.send(movies);
 });
 
@@ -33,7 +32,7 @@ router.post('/', async (req, res) => {
         description: req.body.description
     });
     await movie.save();
-  
+
     res.send(movie);
 });
 
