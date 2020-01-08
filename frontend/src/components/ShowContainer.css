@@ -1,0 +1,56 @@
+
+.showContainer
+ {
+    text-align: center;
+    padding:1rem 4rem 4rem 4rem;
+    
+ }
+
+ .showContainer hr {
+     border:1px white solid;
+ }
+ .seatRow{
+     display:flex;
+     width:100%;
+     flex-wrap: nowrap;
+     justify-content:center;
+ }
+
+ .seatRow .seat {
+     margin:0.5rem;
+     border:1px solid white;
+
+ }
+ .seatRow .seat button {
+     padding:1rem;
+ }
+
+ .seatRow .seat button.disabled {
+     background-color:red;
+     border-color:red;
+     color:white;
+ }
+
+ .seatRow .seat button.free {
+    background-color:green;
+    border-color:green;
+    color:white;
+}
+
+.seatRow .seat button.free.selected {
+    background-color:blue;
+    border-color:blue;
+    color:white;
+}
+
+
+.screenContainer {
+
+    margin:1rem;
+}
+.screenContainer h1 {
+    display: inline;
+    border: 1px solid white;
+    padding: 0rem 20rem;
+    margin: 5rem;
+}

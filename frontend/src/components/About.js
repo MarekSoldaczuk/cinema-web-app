@@ -5,7 +5,7 @@ import './About.css';
 const About = () => {
     return (
         <div>
-            <img className="desc" src={cinemaImg} />
+            <img className="desc" src={cinemaImg} alt="" />
             <p className="about">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, deleniti veniam nostrum qui et exercitationem
             officiis odio commodi fuga, facere, ex at. Sunt voluptatem, commodi quia odit excepturi assumenda

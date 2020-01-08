@@ -8,6 +8,7 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
+import './Repertoire.css'
 // components
 import MovieList from './MovieList';
 import BookingList from './BookingList';
@@ -21,6 +22,7 @@ import slide1 from '../img/slide1.jpg'
 import slide2 from '../img/slide2.jpg';
 import slide3 from '../img/slide3.jpg';
 import Profile from "./Profile";
+import ShowContainer from "./ShowContainer";
 
 
 
@@ -39,7 +41,7 @@ class App extends React.Component {
                             <li className="nav-item">
                                 <Link to="/" className="nav-link navbar-brand">
                                     <div className="logo">
-                                        <img src={cinemaImg} />
+                                        <img src={cinemaImg} alt=""/>
                                         Kino "Kino"
                                     </div>
                                 </Link>
@@ -72,12 +74,16 @@ class App extends React.Component {
                                 txt3={this.state.text3} />
                         </Route>
                         <Route path="/repertoire">
-                            {/* <Repertoire /> */}
-                            <BookingList />
+                            <Repertoire />
+                            {/* <BookingList /> */}
                         </Route>
                         <Route path="/movies">
                             <MovieList />
                         </Route>
+                        <Route path="/show/:id" component={ShowContainer}>
+                            {/* <ShowContainer/> */}
+                        </Route>
+
                         {/* UWAGA! Na chwile obecna nie ma przycisku logout, 
                         zeby zasymulowac te akcje trzeba usunac token z zakladki 
                         'Application' w DevToolsach. W przeciwnym przypadku

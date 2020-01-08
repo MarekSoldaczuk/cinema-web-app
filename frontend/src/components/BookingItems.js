@@ -4,23 +4,23 @@ import axios from 'axios';
 import MovieItems from './MovieItems'
 
 
-const getdateToDisplay = (date) => {
-    const dateDate = new Date(date);
-    const month = dateDate.getUTCMonth() + 1; //months from 1-12
-    const day = dateDate.getUTCDate();
-    const year = dateDate.getUTCFullYear();
+// const getdateToDisplay = (date) => {
+//     const dateDate = new Date(date);
+//     const month = dateDate.getUTCMonth() + 1; //months from 1-12
+//     const day = dateDate.getUTCDate();
+//     const year = dateDate.getUTCFullYear();
 
-    return year + "/" + month + "/" + day;
-};
+//     return year + "/" + month + "/" + day;
+// };
 
-const allSeats = async (data) => {
-    console.log('data');
-    console.log(data[0].movie);
-    console.log('inside');
-    const response = await axios.get(`http://localhost:3020/api/movies/${data[0].movie}`);
-    console.log('movies');
-    console.log(response.data);
-};
+// const allSeats = async (data) => {
+//     console.log('data');
+//     console.log(data[0].movie);
+//     console.log('inside');
+//     const response = await axios.get(`http://localhost:3020/api/movies/${data[0].movie}`);
+//     console.log('movies');
+//     console.log(response.data);
+// };
 
 
 
@@ -31,7 +31,7 @@ const BookingItems = (props) => {
     
 
     const bookings = props.bookings.map((booking) => {
-        allSeats(props.bookings);
+        // allSeats(props.bookings);
         return (
             <div key={booking._id} className="item">
                 {/* {console.log(booking.bookedSeats.length)}

@@ -15,7 +15,7 @@ const bookingSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    // incorporated in the ticket object/array of objects? or bookedSeats? 
+    // //incorporated in the ticket object/array of objects? or bookedSeats? 
     // discount: {
     //     type: String,
     //     required: true,

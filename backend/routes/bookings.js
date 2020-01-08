@@ -25,14 +25,15 @@ router.post('/', async (req, res) => {
     let isValidSeatSelection = true;
     for(let i = 0; i < req.body.bookedSeats.length; i ++)
     {
-        const possibleSeat = req.body.bookedSeats[i];
-        const row = possibleSeat.row;
-        const column = possibleSeat.column;
+        const possibleSeatId = req.body.bookedSeats[i];
+        // const row = possibleSeat.row;
+        // const column = possibleSeat.column;
         // console.log(`tying to find ${row} : ${column}`);
         const isSeatAvailable = newSeats.find((seat)=>{
+            return !!(seat._id == possibleSeatId && seat.taken === false)
             // console.log(` Looping -> ${JSON.stringify(seat)}`)
 
-            return !!(seat.row === row && seat.column === column && seat.taken === false);
+            // return !!(seat.row === row && seat.column === column && seat.taken === false);
         }); 
 
         if(!isSeatAvailable)  {
@@ -86,6 +87,25 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     const booking = await Booking.findById(req.params.id);
+
+    if (!booking) return res.status(404).send('The booking with the given ID was not found.');
+
+    res.send(booking);
+});
+
+// PUT to be implemented in the future
+// router.put('/:id', async (req, res) => {
+//     const {
+//         error
+//     } = validate(req.body);
+//     if (error) return res.status(400).send(error.details[0].message);
+
+//  ........
+//  res.send(booking);
+// });
+
+router.delete('/:id', async (req, res) => {
+    const booking = await Booking.findByIdAndRemove(req.params.id);
 
     if (!booking) return res.status(404).send('The booking with the given ID was not found.');
 

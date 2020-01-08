@@ -11,7 +11,7 @@ const express = require('express');
 const app = express();
 
 // najpierw trzeba ustawic zmienna globalna
-// set cinema_jwtPrivateKey=mySecureKey
+// win: set cinema_jwtPrivateKey=mySecureKey
 // linux: export cinema_jwtPrivateKey=mySecureKey
 if(!config.get('jwtPrivateKey')){
     console.log('FATAL ERROR: jwtPrivateKey is not defined');
@@ -31,7 +31,7 @@ app.use('/api/shows', shows);
 //     .then(() => console.log('connected'))
 //     .catch(err => console.error('could not connect', err));
 
-mongoose.connect("mongodb://localhost/kino")
+mongoose.connect("mongodb://localhost/kino", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then(() => console.log('connected'))
     .catch(err => console.error('could not connect', err));
 

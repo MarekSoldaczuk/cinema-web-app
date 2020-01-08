@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 // import ReactDOM from 'react-dom';
+=======
+// import ReactDOM from 'react-dom';  <--wywala warning
+>>>>>>> abdb866e6e39a6484789639a94930dfb2e42f5bc
 import axios from 'axios';
 import MovieItems from './MovieItems';
 import './../css/components.css';
