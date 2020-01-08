@@ -31,7 +31,7 @@ const showSchema = new mongoose.Schema({
             },
             taken: {
                 type: Boolean,
-                default: false, 
+                // default: false, 
                 required: true
             }
         }
@@ -42,8 +42,8 @@ const Show = mongoose.model('Show', showSchema);
 
 function validateShow(show) {
     const schema = {
-        //assuming we have 3 showrooms
-        room: Joi.number().min(1).max(3).required(),
+        //assuming we have 15 showrooms
+        room: Joi.number().min(1).max(15).required(),
         seats: Joi.array().required(),
         date: Joi.date(),
         movieId: Joi.string()
