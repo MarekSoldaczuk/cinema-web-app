@@ -8,6 +8,7 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
+import './Repertoire.css'
 // components
 import MovieList from './MovieList';
 import LoginRegisterView from './LoginRegisterView';
