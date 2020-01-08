@@ -1,6 +1,5 @@
 .listBg {
     margin: 20px auto;
-    padding: auto;
     display: block;
 }
 
@@ -21,10 +20,6 @@
         "theatre    button";
     grid-template-columns: 3fr 2fr;
     background-color: rgba(255,255,255,0.1);
-
-    border: 1px solid red;
-    width: 100px;
-    height: 100px;
 }
 
 #movieName {
