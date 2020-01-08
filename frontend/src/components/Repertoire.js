@@ -14,7 +14,6 @@ class Repertoire extends React.Component {
             pairs: []
         };
         this.moviesAPI();
-        // this.showsAPI();
       }
 
     moviesAPI = async () => {
@@ -24,7 +23,7 @@ class Repertoire extends React.Component {
         shs = responseS.data
         shs.forEach(sh => {
             mvs.forEach(mv => {
-                if(sh.movie == mv._id){
+                if(sh.movie === mv._id){
                     movies.push({sh, mv})
                 }
             })
@@ -33,12 +32,6 @@ class Repertoire extends React.Component {
             pairs: movies
         });  
     }
-    // showsAPI = async () => {
-    //     const response = await axios.get('http://localhost:3020/api/shows/');
-    //     this.setState({
-    //         shows: response.data
-    //     });  
-    // }
 
     render() {
         return (<div className="listBg col-11 col-sm-9 col-md-8 col-lg-7 col-xl-6">
