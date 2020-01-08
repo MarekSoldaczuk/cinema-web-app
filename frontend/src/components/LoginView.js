@@ -25,7 +25,7 @@ class LoginView extends React.Component {
         let token = undefined;
         const xhr = new XMLHttpRequest();
         xhr.onloadend = ()=> {
-            if(xhr.status != 200) {
+            if(xhr.status !== 200) {
                 alert(xhr.response);
             } else {
                 token = xhr.response;

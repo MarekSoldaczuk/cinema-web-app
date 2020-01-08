@@ -38,7 +38,7 @@ class App extends React.Component {
                             <li className="nav-item">
                                 <Link to="/" className="nav-link navbar-brand">
                                     <div className="logo">
-                                        <img src={cinemaImg} />
+                                        <img src={cinemaImg} alt=""/>
                                         Kino "Kino"
                                     </div>
                                 </Link>

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';  <--wywala warning
 import './../css/components.css';
 
 const MovieItems = (props) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';  <--wywala warning
 import axios from 'axios';
 import MovieItems from './MovieItems';
 import './../css/components.css';
