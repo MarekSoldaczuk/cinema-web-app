@@ -9,7 +9,9 @@ class ShowContainer extends React.Component {
         this.state = {
             movie: null,
             show: null,
-            seatMap: {}
+            seatMap: {},
+            isSuccessfulBooking: false,
+            successfulBooking: null
         };
     }
 
@@ -67,7 +69,6 @@ class ShowContainer extends React.Component {
             return this.state.seatMap[seat]
         }).length;
 
-        console.log(this.state.seatMap)
         const message = `W koszyku masz ${numberOfSeats} biletow. Czy chcesz sfinalizowac transakcje?`;
         if(window.confirm(message))
         {
@@ -82,7 +83,13 @@ class ShowContainer extends React.Component {
                     'x-auth-token': localStorage.getItem('token')
                 }
             });
-            console.log(response);
+            this.setState(
+                {
+                    isSuccessfulBooking: response.status === 200,
+                    successfulBooking: response.data.booking
+                }
+            )
+        
         }
     }
 
@@ -94,56 +101,75 @@ class ShowContainer extends React.Component {
 
         const seatButtons = [];
 
-
+        const seats = [...this.state.show.seats]; 
+        const rows = [...new Set(seats.map((seat)=>seat.row))]
+        const columns = [...new Set(seats.map((seat)=>seat.column))]
+        const rowCount = {}
     
         const seatMap = [];
+
         this.state.show.seats.forEach((seat)=> {
-            if(!seatMap[seat.row-1]) seatMap[seat.row-1] = [];
+
+            if(!seatMap[seat.row-1]) seatMap[seat.row-1] = []
+
+            if(!rowCount[seat.row-1]) rowCount[seat.row-1] = 0
+
+            rowCount[seat.row-1] ++;
 
             let rowMap = seatMap[seat.row-1];
 
-            if(!rowMap[seat.column-1]) rowMap[seat.column-1] = [];
+            if(!rowMap[seat.column-1]) rowMap[seat.column-1] =  []
 
             rowMap[seat.column-1] = seat;
-
-
         
         });
 
-        seatMap.forEach((row)=> {
+        seatMap.forEach((row, index)=> {
 
             const rowSeats = [];
 
 
             row.forEach((rowSeat)=> {
                 rowSeats.push(
-                    <div className="seat">
+                <div className="seat" key={`seat_${rowSeat._id}`}>
 
-<button className={`${rowSeat.taken?'disabled':'free'} ${this.state.seatMap[rowSeat._id]?'selected': 'unselected'}`} 
-disabled={rowSeat.taken} 
-onClick={()=>this.toggleSeat(rowSeat)}>
+                    <button className={`${rowSeat.taken?'disabled':'free'} ${this.state.seatMap[rowSeat._id]?'selected': 'unselected'}`} 
+                    disabled={rowSeat.taken} key={`button_${rowSeat._id}`}
+                    onClick={()=>this.toggleSeat(rowSeat)}>
+                        <p>{rowSeat.row-1}{rowSeat.column-1}</p>
+                    </button>
 
-                            <p>{rowSeat.row-1}{rowSeat.column-1}</p>
-                            </button>
-
-                    </div>
-
+                </div>
                 )
             })
 
             seatButtons.push(
-                <div className="seatRow">
+                <div className="seatRow" key={`seatRow_${index}`}>
                 {
                     rowSeats
                 }
                 </div>
-
             )
-
-
-
         })
 
+        if(this.state.isSuccessfulBooking)
+        {
+            let seats = this.state.successfulBooking.bookedSeats.map((seat)=> 
+            {
+                return <p key={`result_${seat._id}`}>{seat.row} - {seat.column}</p>
+            })
+            return (
+                <div className="showContainer">
+                    <p>Dziekujemy za zakup biletow</p>
+                    <p>{this.state.movie.title}</p>
+                    <h3> {this.state.movie.title}</h3>
+                    <h4> {this.getdateToDisplay()}</h4>
+                    <p> Sala: {this.state.show.room}</p>
+                    <h6>Miejsca: </h6>
+                    {seats}
+                </div>
+            )
+        }
         return (
              <div className="showContainer">
                 <h3> {this.state.movie.title}</h3>
@@ -158,11 +184,10 @@ onClick={()=>this.toggleSeat(rowSeat)}>
 
                  {seatButtons}
                  <button onClick={this.onClickBuy}>
-                     BUY
+                     KUP
                  </button>
             </div>
-       );
-        
+       );        
     }
 }
 

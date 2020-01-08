@@ -24,4 +24,3 @@ for(let i=0; i<count; i++){
     }
     s = s + "]\n}\n";
 }
-console.log(s);

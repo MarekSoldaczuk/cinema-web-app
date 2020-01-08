@@ -29,7 +29,6 @@ class Repertoire extends React.Component {
             mvs.forEach(mv => {
                 if(sh.movie === mv._id){
                     movies.push({sh, mv})
-                    console.log(movies)
                 }
             })
         });

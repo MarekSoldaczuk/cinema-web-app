@@ -23,23 +23,20 @@ router.post('/', async (req, res) => {
     if(!req.body.bookedSeats) return res.status(400).send('No seats booked, no change, no reservation, nothing');
 
     let isValidSeatSelection = true;
+    const bookedSeats = [];
     for(let i = 0; i < req.body.bookedSeats.length; i ++)
     {
         const possibleSeatId = req.body.bookedSeats[i];
-        // const row = possibleSeat.row;
-        // const column = possibleSeat.column;
-        // console.log(`tying to find ${row} : ${column}`);
-        const isSeatAvailable = newSeats.find((seat)=>{
-            return !!(seat._id == possibleSeatId && seat.taken === false)
-            // console.log(` Looping -> ${JSON.stringify(seat)}`)
 
-            // return !!(seat.row === row && seat.column === column && seat.taken === false);
+        const foundSeat = newSeats.find((seat)=>{
+            return !!(seat._id == possibleSeatId && seat.taken === false)
         }); 
 
-        if(!isSeatAvailable)  {
+        if(!foundSeat)  {
             isValidSeatSelection = false;
             break;
         }
+        bookedSeats.push(foundSeat)
     }
 
     if(!isValidSeatSelection) return res.status(400).send('Seat not available');
@@ -48,27 +45,26 @@ router.post('/', async (req, res) => {
     booking.movie = show.movie;
     booking.date = show.date;
     booking.room = show.room;
-    booking.bookedSeats = req.body.bookedSeats;
+    booking.bookedSeats = bookedSeats;
+    booking.userId = req.user?req.user._id: 'Anon';
     booking = await booking.save();
 
-    // console.log(`this is the booking ${JSON.stringify(booking)}`)
-    req.body.bookedSeats.forEach((bookedSeat, index)=> {
+    bookedSeats.forEach((bookedSeat, index)=> {
         const row = bookedSeat.row;
         const column = bookedSeat.column;    
 
         const foundSeatIndex = newSeats.findIndex((seat)=>{
-            return seat.row === row && seat.column === column;
+            return seat._id === bookedSeat._id;
         });
 
         if(foundSeatIndex > -1)
         {
-            newSeats[index] = {
+            newSeats[foundSeatIndex] = {
                 row, 
                 column,
                 taken: true,
                 bookingId: booking._id
             };
-            // console.log(`new seat ${JSON.stringify(newSeats[index])}`);
         }
     });
 

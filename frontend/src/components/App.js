@@ -11,7 +11,6 @@ import './App.css';
 import './Repertoire.css'
 // components
 import MovieList from './MovieList';
-import BookingList from './BookingList';
 import LoginRegisterView from './LoginRegisterView';
 import About from './About';
 import Repertoire from './Repertoire';
@@ -75,7 +74,6 @@ class App extends React.Component {
                         </Route>
                         <Route path="/repertoire">
                             <Repertoire />
-                            {/* <BookingList /> */}
                         </Route>
                         <Route path="/movies">
                             <MovieList />

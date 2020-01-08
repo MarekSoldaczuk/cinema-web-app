@@ -15,7 +15,12 @@ const bookingSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    // //incorporated in the ticket object/array of objects? or bookedSeats? 
+    userId: {
+        type: String,
+        required: true,
+    },
+
+    // maybe for the future
     // discount: {
     //     type: String,
     //     required: true,

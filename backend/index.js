@@ -7,6 +7,8 @@ const auth = require('./routes/auth.js');
 const bookings = require('./routes/bookings.js');
 const shows = require('./routes/shows.js');
 
+const authMiddleware = require('./middleware/auth')
+
 const express = require('express');
 const app = express();
 
@@ -23,7 +25,7 @@ app.use(cors());
 app.use('/api/users', users);
 app.use('/api/movies', movies);
 app.use('/api/auth', auth);
-app.use('/api/bookings', bookings);
+app.use('/api/bookings', authMiddleware, bookings);
 app.use('/api/shows', shows);
 
 // const db = config.get('db');
