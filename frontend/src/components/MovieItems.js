@@ -1,12 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import './../css/components.css';
 
 const MovieItems = (props) => {
     //console.log(props.movies);
     const movies = props.movies.map((movie) => {
         return (
-            <div key={movie.id} className="item">
+            <div key={movie._id} className="item">
                 <h1 className="title"><p>{movie.title}</p></h1>
                 <h3 className="director">Reżyseria: {movie.director}</h3>
                 <div className="genre">
@@ -15,7 +15,7 @@ const MovieItems = (props) => {
                 <p className="movie">
                 {movie.description}
                 </p>
-                <hr />
+                {/* <hr /> */}
             </div>
             );
     });

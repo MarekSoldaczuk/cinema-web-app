@@ -1,34 +1,34 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import axios from 'axios';
-import MovieItems from './MovieItems';
+import BookingItems from './BookingItems';
 import './../css/components.css';
 
-class MovieList extends React.Component {
+class BookingList extends React.Component {
     
     constructor(props) {
         super(props);
         this.state = {
-            movies: []
+            bookings: []
         };
-        this.moviesAPI();
+        this.bookingsAPI();
       }
 
-    moviesAPI = async () => {
-        const response = await axios.get('http://localhost:3020/api/movies/');
+    bookingsAPI = async () => {
+        const response = await axios.get('http://localhost:3020/api/bookings/');
         //console.log(response.data);
         this.setState({
-            movies: response.data
+            bookings: response.data
         });  
     }
 
     render() {
         return ( 
             <div className = "list" >
-            <MovieItems movies = {this.state.movies} />
+            <BookingItems bookings = {this.state.bookings} />
             </div>
         );
     }
 }
 
- export default MovieList;
+ export default BookingList;

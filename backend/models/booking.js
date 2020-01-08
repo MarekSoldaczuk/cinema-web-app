@@ -15,6 +15,27 @@ const bookingSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    // incorporated in the ticket object/array of objects? or bookedSeats? 
+    // discount: {
+    //     type: String,
+    //     required: true,
+    //     enum: ['STUDENCKI', 'ULGOWY', 'SENIORSKI', 'WETERAN', 'NORMALNY'],
+    //     uppercase: true
+    // },
+    // price: {
+    //     type: String,
+    //     required: true,
+    //     enum: ['22.00 ZŁ', '22.00 ZŁ', '23.00 ZŁ', '23.00 ZŁ', '28.00 ZŁ']
+    // },
+    // amount: {
+    //     type: Number,
+    //     required: true
+    // },
+    // option: {
+    //     type: String,
+    //     required: true,
+    //     enum: ['KUP', 'REZERWUJ']
+    // },
     bookedSeats: [
         {
             row: {

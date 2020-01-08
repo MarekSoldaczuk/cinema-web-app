@@ -10,6 +10,7 @@ import {
 import './App.css';
 // components
 import MovieList from './MovieList';
+import BookingList from './BookingList';
 import LoginRegisterView from './LoginRegisterView';
 import About from './About';
 import Repertoire from './Repertoire';
@@ -71,7 +72,8 @@ class App extends React.Component {
                                 txt3={this.state.text3} />
                         </Route>
                         <Route path="/repertoire">
-                            <Repertoire />
+                            {/* <Repertoire /> */}
+                            <BookingList />
                         </Route>
                         <Route path="/movies">
                             <MovieList />
