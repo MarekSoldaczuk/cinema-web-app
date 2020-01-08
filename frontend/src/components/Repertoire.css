@@ -1,0 +1,65 @@
+.listBg {
+    margin: 20px auto;
+    display: block;
+}
+
+.repertoireList {
+    list-style: none;
+    margin: 0 0 100px 0;
+    padding: 0;
+}
+
+.repertoireItem {
+    margin: 10px;
+    padding: 15px;
+    display: grid;
+    grid-template-areas: 
+        "name   name"
+        "date   button"
+        "time   button"
+        "theatre    button";
+    grid-template-columns: 3fr 2fr;
+    background-color: rgba(255,255,255,0.1);
+}
+
+#movieName {
+    grid-area: name;
+    text-shadow: 2px 2px #831818;
+    font-family: 'Kulim Park', sans-serif;
+    line-height: 2rem;
+    font-size: 3rem;
+}
+#dateAndTime {
+    grid-area: date;
+    font-size: 1.2rem;
+    line-height: 0.8rem;
+    margin-top: 15px;
+}
+#duration {
+    grid-area: time;
+    font-size: 1.2rem;
+    line-height: 0.8rem;
+}
+#theatre {
+    grid-area: theatre;
+    font-size: 1.2rem;
+    line-height: 0.8rem;
+}
+#buyButton {
+    grid-area: button;
+    margin-top: 15px;
+    width: 100%;
+    background-color: #843AFA;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    transition: 0.3s;
+}
+.freeSeats {
+    font-size: 1rem;
+    font-weight: normal;
+}
+#buyButton:hover {
+    background-color: #cd3afa;
+}

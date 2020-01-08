@@ -1,0 +1,172 @@
+* {box-sizing: border-box}
+
+.container {
+  padding: 16px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/background.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed;
+    color: white !important;
+}
+
+.navbar {
+    background-color: #000000;
+  }
+
+  .navbar-nav {
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 1px;
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+  padding-right:30px;
+}
+
+nav img {
+    display: block;
+    width: 50px;
+    height: auto;
+}
+
+.carousel-inner img {
+  width: 60%;
+  margin-left: 20%;
+}
+
+h3 {
+  text-shadow: 2px 2px #333333;
+}
+
+hr {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-top: 1px solid white;
+ }
+
+.description {
+  text-shadow: 2px 2px #831818;
+  font-family: 'Kulim Park', sans-serif;
+  margin: 5% 20%;
+  padding-bottom: 5%;
+  font-size: 1.3rem;
+}
+
+.about {
+  text-align: justify;
+  text-shadow: 1px 1px #831818;
+  font-family: 'Kulim Park', sans-serif;
+  margin:5% 15%;
+}
+
+.desc {
+float: right; 
+ width: 50%;
+  height: auto;
+  margin-left: 15%;
+  margin-right: 5%;
+}
+
+
+/* account.html */
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 3%;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn, .loginbtn {
+  background-color: #4FB29D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover, .loginbtn:hover {
+  opacity:1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.signin, .signup {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.forms {
+    display: flex;
+    justify-content: center;
+}
+
+.forms {
+  margin-bottom: 100px;
+}
+
+
+.cinema-slider img {
+  width:100%;
+}
+.page-container {
+  /* width:100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  justify-content: center; */
+}
+
+/* 
+  ==== 
+*/
+
+
+
+@media screen and (max-width: 600px) {
+  /* body {
+    background-size: contain;
+    background-repeat: no-repeat;
+  } */
+
+  .navbar {
+      font-size: 0.5rem;
+      height: 4%;
+  }
+
+  .desc {
+    width: 85%; 
+    margin: 5%;
+  }
+
+  .imgcontainer {
+    width: 40vw;
+    height: 40vw;
+  }
+}
