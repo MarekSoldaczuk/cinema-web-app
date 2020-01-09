@@ -28,12 +28,13 @@ app.use('/api/auth', auth);
 app.use('/api/bookings', authMiddleware, bookings);
 app.use('/api/shows', shows);
 
-// const db = config.get('db');
+const db = config.get('db');
 // mongoose.connect(db)
 //     .then(() => console.log('connected'))
 //     .catch(err => console.error('could not connect', err));
 
-mongoose.connect("mongodb://localhost/kino", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+// mongoose.connect(db)
     .then(() => console.log('connected'))
     .catch(err => console.error('could not connect', err));
 
