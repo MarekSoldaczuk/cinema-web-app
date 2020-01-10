@@ -15,7 +15,7 @@ class MovieList extends React.Component {
       }
 
     moviesAPI = async () => {
-        const response = await axios.get('http://localhost:3020/api/movies/');
+        const response = await axios.get('https://obscure-sierra-52013.herokuapp.com/api/movies/');
         //console.log(response.data);
         this.setState({
             movies: response.data

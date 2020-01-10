@@ -21,9 +21,9 @@ class Repertoire extends React.Component {
       }
 
     moviesAPI = async () => {
-        const responseM = await axios.get('http://localhost:3020/api/movies/')
+        const responseM = await axios.get('https://obscure-sierra-52013.herokuapp.com/api/movies/')
         mvs = responseM.data
-        const responseS = await axios.get('http://localhost:3020/api/shows/');
+        const responseS = await axios.get('https://obscure-sierra-52013.herokuapp.com/api/shows/');
         shs = responseS.data
         shs.forEach(sh => {
             mvs.forEach(mv => {

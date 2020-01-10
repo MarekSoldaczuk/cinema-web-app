@@ -37,7 +37,7 @@ class RegisterView extends React.Component {
             }
         }
         // changed to 3020, as 3000 is used by react App
-        xhr.open("POST", "http://localhost:3020/api/users/");
+        xhr.open("POST", "https://obscure-sierra-52013.herokuapp.com/api/users/");
         xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         xhr.send(usr);
     };
