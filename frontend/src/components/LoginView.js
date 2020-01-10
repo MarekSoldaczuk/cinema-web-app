@@ -34,7 +34,7 @@ class LoginView extends React.Component {
             }
         };
         // changed from 3000
-        xhr.open("POST", "http://localhost:3020/api/auth/");
+        xhr.open("POST", "https://obscure-sierra-52013.herokuapp.com/api/auth/");
         xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         xhr.send(usr);
     }

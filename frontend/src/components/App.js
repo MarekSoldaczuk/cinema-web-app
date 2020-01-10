@@ -78,15 +78,8 @@ class App extends React.Component {
                         <Route path="/movies">
                             <MovieList />
                         </Route>
-                        <Route path="/show/:id" component={ShowContainer}>
-                            {/* <ShowContainer/> */}
-                        </Route>
-
-                        {/* UWAGA! Na chwile obecna nie ma przycisku logout, 
-                        zeby zasymulowac te akcje trzeba usunac token z zakladki 
-                        'Application' w DevToolsach. W przeciwnym przypadku
-                        przy klikaniu na zakladke 'MOJE KONTO' wyswietla sie
-                        roboczy PROFil */}
+                        <PrivateRoute path="/show/:id" component={ShowContainer}>
+                        </PrivateRoute>
                         <PrivateRoute path="/myaccount" component={Profile}/>
                         <Route path="/about">
                             <About />
@@ -105,7 +98,7 @@ const isLoggedIn = ()=> {
 }
 
 const PrivateRoute = ({ component: Component, ...rest}) =>( <Route {...rest} render={(props)=> (
-    isLoggedIn() ? <Component {...props}/>: <Redirect to='login'/> )}/>
+    isLoggedIn() ? <Component {...props}/>: <Redirect to='/login'/> )}/>
 )
 
 export default App;

@@ -34,9 +34,9 @@ class ShowContainer extends React.Component {
     }
 
     getResource = async () => {
-        const responseS = await axios.get(`http://localhost:3020/api/shows/${this.props.match.params.id}`)
+        const responseS = await axios.get(`https://obscure-sierra-52013.herokuapp.com/api/shows/${this.props.match.params.id}`)
         const show = responseS.data
-        const responseM = await axios.get(`http://localhost:3020/api/movies/${show.movie}`)
+        const responseM = await axios.get(`https://obscure-sierra-52013.herokuapp.com/api/movies/${show.movie}`)
         const movie = responseM.data
 
         this.setState({
@@ -72,7 +72,7 @@ class ShowContainer extends React.Component {
         const message = `W koszyku masz ${numberOfSeats} biletow. Czy chcesz sfinalizowac transakcje?`;
         if(window.confirm(message))
         {
-            const response = await axios.post('http://localhost:3020/api/bookings/',
+            const response = await axios.post('https://obscure-sierra-52013.herokuapp.com/api/bookings/',
             {
                 // Booking object
                 bookedSeats: Object.keys(this.state.seatMap),
@@ -80,9 +80,10 @@ class ShowContainer extends React.Component {
             },
             {
                 headers: {
-                    'x-auth-token': localStorage.getItem('token')
+                    'x-auth-token': localStorage.getItem('token') !== null ? localStorage.getItem('token') : undefined
                 }
             });
+
             this.setState(
                 {
                     isSuccessfulBooking: response.status === 200,

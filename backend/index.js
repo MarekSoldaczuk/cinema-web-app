@@ -34,6 +34,8 @@ const db = config.get('db');
 //     .catch(err => console.error('could not connect', err));
 
 // mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+console.log('db:');
+console.log(db);
 mongoose.connect(db)
     .then(() => console.log('connected'))
     .catch(err => console.error('could not connect', err));
